@@ -26,15 +26,39 @@ public class Rettangolo {
         return base * altezza;
     }
 
+    //Metodo Grafico Rettangolo
+    public String GraphicRettangolo(int altezza,int base){
+        String graphicRettangolo = "o" + "\t";
+        for (int i = 0; i < base -1; i++) {
+            graphicRettangolo = graphicRettangolo + "o"+"\t";
+        }
+        graphicRettangolo = graphicRettangolo +"\n";
+        for (int i = 0; i < altezza-2 ; i++) {
+            graphicRettangolo = graphicRettangolo +"o";
+            for (int j = 0; j < base -1; j++) {
+                graphicRettangolo = graphicRettangolo +" "+"\t";
+            }
+            graphicRettangolo = graphicRettangolo + "o"+"\n";
+        }
+        for (int i = 0; i < base; i++) {
+            graphicRettangolo = graphicRettangolo + "o"+"\t";
+        }
+
+        return graphicRettangolo;
+
+
+    }
+
     //Override per stampa rettangolo
     @Override
     public String toString() {
+        String Graphic = GraphicRettangolo(getAltezza(),getBase());
         return "Rettangolo"+"\n-------------\n" +
                 "Altezza = " + getAltezza() +"\n"+
                 "Base = " + getBase() +"\n"+
                 "Perimetro = "+CalcolaPeimetro(getAltezza(),getBase())+"\n"+
                 "Area = "+CalcolaArea(getAltezza(),getBase())+"\n"+
-                "-------------";
+                "\n"+"Ecco la grafica del tuo rettangolo : \n"+Graphic+"\n-------------";
     }
 
     //Getter and Setter
