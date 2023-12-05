@@ -22,7 +22,9 @@ public class Main {
         //Accesso a oggetto e Creazione
         Rettangolo rett1 = new Rettangolo(altezza,base);
 
+        String Printrett1 = rett1.toString();
 
+        System.out.println(Printrett1);
 
 
         //Chiudo Scanner
